@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" />
+</head>
+<body class="font-roboto bg-gray-100">
+  <!-- Header -->
+<header class="bg-white shadow-md">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="text-2xl font-bold text-gray-800">Musyaffa E-Shop</div>
+      <nav class="space-x-4">
+        <a href="index.html" class="text-gray-600 hover:text-gray-800">Home</a>
+        <a href="shop.html" class="text-gray-600 hover:text-gray-800">Products</a>
+        <a href="#about" class="text-gray-600 hover:text-gray-800">About</a>
+        <a href="#contact" class="text-gray-600 hover:text-gray-800">Contact</a>
+      </nav>
+      <div class="space-x-4 flex items-center">
+        <!-- Search -->
+        <button id="searchBtn" class="text-gray-600 hover:text-gray-800">
+          <i class="fas fa-search"></i>
+        </button>
+
+        <!-- Shopping Cart -->
+        <button id="cartBtn" class="text-gray-600 hover:text-gray-800 relative">
+          <i class="fas fa-shopping-cart"></i>
+          <span id="cartCount" class="absolute top-0 right-0 bg-red-600 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">0</span>
+        </button>
+
+        <!-- Profile -->
+        <div class="relative">
+          <button id="profileBtn" class="text-gray-600 hover:text-gray-800">
+            <i class="fas fa-user"></i>
+          </button>
+          <div id="profileMenu" class="hidden absolute right-0 mt-2 bg-white shadow-md rounded-md w-48">
+            <a href="#" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Login</a>
+            <a href="#" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Sign Up</a>
+            <a href="#" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+</header>
+
+  <!-- Shop Content -->
+<section class="py-12">
+    <div class="container mx-auto px-4" id="shopApp">
+      <h1 class="text-4xl font-bold text-gray-800 mb-6">Musyaffa Products</h1>
+
+      <!-- Product Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="productGrid">
+        <!-- Produk akan di-generate secara dinamis -->
+      </div>
+
+      <!-- Pagination -->
+      <div class="mt-8 flex justify-center space-x-2" id="pagination">
+        <!-- Tombol pagination akan di-generate secara dinamis -->
+      </div>
+    </div>
+</section>
+
+  <!-- Modal -->
+<div class="fixed inset-0 bg-black bg-opacity-50 items-center justify-center p-4 z-50 hidden" id="productModal">
+    <div class="bg-white rounded-lg shadow-lg p-6 max-w-lg w-full relative">
+      <h2 class="text-2xl font-bold mb-4" id="modalTitle"></h2>
+      <img src="" alt="Product Image" id="modalImage" class="w-full h-64 object-cover mb-4" />
+      <p class="text-gray-600 mb-4" id="modalPrice"></p>
+      <p class="text-gray-800" id="modalDescription"></p>
+      <button class="mt-4 bg-blue-600 text-white px-4 py-2 rounded-md" id="closeModal">
+        Close
+      </button>
+    </div>
+</div>
+
+  <!-- About Section -->
+<section id="about" class="bg-gray-100 py-12">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-gray-800 mb-6">About Us</h2>
+      <p class="text-gray-600">E-Shop is your trusted destination for quality products at unbeatable prices. We pride ourselves on delivering exceptional customer service and a seamless shopping experience. Join our community of happy shoppers today!</p>
+    </div>
+</section>
+
+  <!-- Contact Section -->
+<section id="contact" class="bg-white py-12">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-gray-800 mb-6">Contact Us</h2>
+      <p class="text-gray-600 mb-4">Have questions or need assistance? Reach out to us and we'll get back to you promptly!</p>
+      <form action="mailto:musyaffaarwin@gmail.com" method="post" enctype="text/plain" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <input type="text" name="name" placeholder="Your Name" class="px-4 py-2 rounded-md border border-gray-300"/>
+        <input type="email" name="email" placeholder="Your Email" class="px-4 py-2 rounded-md border border-gray-300"/>
+        <textarea name="message" placeholder="Your Message" class="col-span-2 px-4 py-2 rounded-md border border-gray-300" rows="4"></textarea>
+        <button type="submit" class="col-span-2 bg-blue-600 text-white px-6 py-2 rounded-md">Send Message</button>
+      </form>
+    </div>
+</section>
+  <!-- Footer -->
+<footer class="bg-gray-800 text-white py-8">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <!-- About Us -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4">About Us</h3>
+          <p class="text-gray-400">E-Shop is your go-to destination for the best products at unbeatable prices. Shop with us and experience the difference.</p>
+        </div>
+        <!-- Quick Links -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="text-gray-400 hover:text-white">Home</a></li>
+            <li><a href="shop.html" class="text-gray-400 hover:text-white">Products</a></li>
+            <li><a href="#about" class="text-gray-400 hover:text-white">About</a></li>
+            <li><a href="#contact" class="text-gray-400 hover:text-white">Contact</a></li>
+          </ul>
+        </div>
+        <!-- Customer Service -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Customer Service</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white">FAQ</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white">Shipping & Returns</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white">Terms of Service</a></li>
+          </ul>
+        </div>
+        <!-- Follow Us -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
+          <div class="space-x-4">
+            <a href="https://github.com/Musyaffaa2" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-github"></i></a>
+            <a href="https://instagram.com/yaaffaaa_" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/musyaffa-arwin-a99b94312/" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="text-center text-gray-400 mt-8">&copy; 2023 Musyaffa E-Shop. All rights reserved.</div>
+    </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

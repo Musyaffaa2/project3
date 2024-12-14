@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home - E-Shop</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"/>
+  <link rel="stylesheet" href="src/output.css">
+</head>
+<body class="font-roboto bg-gray-100">
+  <!-- Header -->
+<header class="bg-white shadow-md">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="text-2xl font-bold text-gray-800">Musyaffa E-Shop</div>
+      <nav class="space-x-4">
+        <a href="index.html" class="text-gray-600 hover:text-gray-800">Home</a>
+        <a href="shop.html" class="text-gray-600 hover:text-gray-800">Products</a>
+        <a href="#about" class="text-gray-600 hover:text-gray-800">About</a>
+        <a href="#contact" class="text-gray-600 hover:text-gray-800">Contact</a>
+      </nav>
+      <div class="space-x-4 flex items-center">
+        <!-- Search -->
+        <button id="searchBtn" class="text-gray-600 hover:text-gray-800">
+          <i class="fas fa-search"></i>
+        </button>
+
+        <!-- Shopping Cart -->
+        <button id="cartBtn" class="text-gray-600 hover:text-gray-800 relative">
+          <i class="fas fa-shopping-cart"></i>
+          <span id="cartCount" class="absolute top-0 right-0 bg-red-600 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">0</span>
+        </button>
+
+        <!-- Profile -->
+        <div class="relative">
+          <button id="profileBtn" class="text-gray-600 hover:text-gray-800">
+            <i class="fas fa-user"></i>
+          </button>
+          <div id="profileMenu" class="hidden absolute right-0 mt-2 bg-white shadow-md rounded-md w-48">
+            <a href="#" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Login</a>
+            <a href="#" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Sign Up</a>
+            <a href="#" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+</header>
+
+  <!-- Search Modal -->
+  <div id="searchModal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center">
+    <div class="bg-white p-6 rounded-md w-2/3 md:w-1/3">
+      <button id="closeSearch" class="text-gray-600 hover:text-gray-800 float-right">&times;</button>
+      <h2 class="text-lg font-bold mb-4">Search Products</h2>
+      <input type="text" id="searchInput" placeholder="Type to search..." class="w-full border border-gray-300 px-4 py-2 rounded-md"/>
+    </div>
+  </div>
+
+  <!-- Shopping Cart Modal -->
+  <div id="cartModal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center">
+    <div class="bg-white p-6 rounded-md w-2/3 md:w-1/3">
+      <button id="closeCart" class="text-gray-600 hover:text-gray-800 float-right">&times;</button>
+      <h2 class="text-lg font-bold mb-4">Your Cart</h2>
+      <div id="cartItems" class="space-y-4">
+        <p class="text-gray-600">Your cart is empty.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+<section class="bg-white py-12">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+      <div class="md:w-1/2">
+        <h1 class="text-4xl font-bold text-gray-800 mb-4">Welcome to E-Shop</h1>
+        <p class="text-gray-600 mb-6">Discover the best products at unbeatable prices. Shop now and enjoy exclusive offers!</p>
+        <a href="shop.html" class="bg-blue-600 text-white px-6 py-3 rounded-md">Shop Now</a>
+      </div>
+      <div class="md:w-1/2 mt-6 md:mt-0">
+        <img src="img/eshop_trans.png" alt="A vibrant and colorful display of various products including electronics, fashion, and home goods" class="w-full rounded-md" width="600" height="400"/>
+      </div>
+    </div>
+</section>
+
+  <!-- Featured Products -->
+<section class="py-12">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-gray-800 mb-6">Featured Products</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <!-- Product 1 -->
+        <div class="bg-white shadow-md rounded-md overflow-hidden">
+          <img src="https://storage.googleapis.com/a1aa/image/IWODZjeQYxTvBqbz6xLu5VzF4aU3x6uLBuJU8xeoCWpNrs6TA.jpg" alt="A stylish pair of sneakers in white and blue color" class="w-full" width="300" height="300"/>
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-gray-800">Stylish Sneakers</h3>
+            <p class="text-gray-600">$49.99</p>
+            <a href="shop.html" class="bg-blue-600 text-white px-4 py-2 rounded-md mt-4 inline-block">View Details</a>
+          </div>
+        </div>
+        <!-- Product 2 -->
+        <div class="bg-white shadow-md rounded-md overflow-hidden">
+          <img src="https://storage.googleapis.com/a1aa/image/dDqcLTAMCI57NplANwJuMdUAoVFte85eFIYafCtEyakjWZ1nA.jpg" alt="A sleek and modern smartwatch with a black strap" class="w-full" width="300" height="300"/>
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-gray-800">Smartwatch</h3>
+            <p class="text-gray-600">$199.99</p>
+            <a href="shop.html" class="bg-blue-600 text-white px-4 py-2 rounded-md mt-4 inline-block">View Details</a>
+          </div>
+        </div>
+        <!-- Product 3 -->
+        <div class="bg-white shadow-md rounded-md overflow-hidden">
+          <img src="https://storage.googleapis.com/a1aa/image/Ta9WiJJpu47QBFGbMY4Cc4Ez87I82WQI1D1oB4t8zGA1KreJA.jpg" alt="A high-quality DSLR camera with a lens attached" class="w-full" width="300" height="300"/>
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-gray-800">DSLR Camera</h3>
+            <p class="text-gray-600">$499.99</p>
+            <a href="shop.html" class="bg-blue-600 text-white px-4 py-2 rounded-md mt-4 inline-block">View Details</a>
+          </div>
+        </div>
+        <!-- Product 4 -->
+        <div class="bg-white shadow-md rounded-md overflow-hidden">
+          <img src="https://storage.googleapis.com/a1aa/image/lQb6nJTD4cIKCZqSQNS1GmOWhZfl7KAOR9I9aJkhQgZpVW9JA.jpg" alt="A comfortable and stylish office chair in black color" class="w-full" width="300" height="300"/>
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-gray-800">Office Chair</h3>
+            <p class="text-gray-600">$89.99</p>
+            <a href="shop.html" class="bg-blue-600 text-white px-4 py-2 rounded-md mt-4 inline-block">View Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+  <!-- About Section -->
+<section id="about" class="bg-gray-100 py-12">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-gray-800 mb-6">About Us</h2>
+      <p class="text-gray-600">E-Shop is your trusted destination for quality products at unbeatable prices. We pride ourselves on delivering exceptional customer service and a seamless shopping experience. Join our community of happy shoppers today!</p>
+    </div>
+</section>
+
+  <!-- Contact Section -->
+<section id="contact" class="bg-white py-12">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-gray-800 mb-6">Contact Us</h2>
+      <p class="text-gray-600 mb-4">Have questions or need assistance? Reach out to us and we'll get back to you promptly!</p>
+      <form action="mailto:musyaffaarwin@gmail.com" method="post" enctype="text/plain" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <input type="text" name="name" placeholder="Your Name" class="px-4 py-2 rounded-md border border-gray-300"/>
+        <input type="email" name="email" placeholder="Your Email" class="px-4 py-2 rounded-md border border-gray-300"/>
+        <textarea name="message" placeholder="Your Message" class="col-span-2 px-4 py-2 rounded-md border border-gray-300" rows="4"></textarea>
+        <button type="submit" class="col-span-2 bg-blue-600 text-white px-6 py-2 rounded-md">Send Message</button>
+      </form>
+    </div>
+</section>
+  
+
+  <!-- Newsletter Section -->
+<section class="bg-blue-600 py-12">
+    <div class="container mx-auto px-4 text-center text-white">
+      <h2 class="text-3xl font-bold mb-4">Subscribe to Our Newsletter</h2>
+      <p class="mb-6">Get the latest updates on new products and upcoming sales</p>
+      <form class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4">
+        <input type="email" placeholder="Enter your email" class="px-4 py-2 rounded-md text-gray-800"/>
+        <button type="submit" class="bg-white text-blue-600 px-6 py-2 rounded-md">Subscribe</button>
+      </form>
+    </div>
+</section>
+
+  <!-- Footer -->
+<footer class="bg-gray-800 text-white py-8">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <!-- About Us -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4">About Us</h3>
+          <p class="text-gray-400">E-Shop is your go-to destination for the best products at unbeatable prices. Shop with us and experience the difference.</p>
+        </div>
+        <!-- Quick Links -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="text-gray-400 hover:text-white">Home</a></li>
+            <li><a href="shop.html" class="text-gray-400 hover:text-white">Products</a></li>
+            <li><a href="#about" class="text-gray-400 hover:text-white">About</a></li>
+            <li><a href="#contact" class="text-gray-400 hover:text-white">Contact</a></li>
+          </ul>
+        </div>
+        <!-- Customer Service -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Customer Service</h3>
+          <ul class="space-y-2">
+            <li><a href="#" class="text-gray-400 hover:text-white">FAQ</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white">Shipping & Returns</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white">Privacy Policy</a></li>
+            <li><a href="#" class="text-gray-400 hover:text-white">Terms of Service</a></li>
+          </ul>
+        </div>
+        <!-- Follow Us -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
+          <div class="space-x-4">
+            <a href="https://github.com/Musyaffaa2" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-github"></i></a>
+            <a href="https://instagram.com/yaaffaaa_" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/musyaffa-arwin-a99b94312/" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="text-center text-gray-400 mt-8">&copy; 2023 Musyaffa E-Shop. All rights reserved.</div>
+    </div>
+</footer>
+<script src="js/script.js"></script>
+</body>
+</html>
